@@ -1,5 +1,4 @@
-# rbf
-Record-based file libraries for different languages
+# Record-based file libraries for different languages
 
 In some industries (mainly airline, others welcome), a lot of files are exchanged using a record
 organization. Usually, the file is plain vanilla ASCII file where each line is mapped to a record, and
