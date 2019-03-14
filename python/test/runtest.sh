@@ -1,0 +1,9 @@
+cd test
+python3 test_basetype.py
+python3 test_element.py
+python3 test_field.py
+python3 test_fieldtype.py
+python3 test_layout.py
+python3 test_reader.py
+python3 test_record.py
+cd ..

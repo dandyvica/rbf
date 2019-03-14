@@ -1,30 +1,31 @@
-# rbf
-Record-based file libraries for different languages
-
-In some industries (mainly airline, others welcome), a lot of files are exchanged using a record
-organization. Usually, the file is plain vanilla ASCII file where each line is mapped to a record, and
-each record to a field within this record.
-
-The way to recognize a record is generally by having a record identifier (example: first 2 characters
-of the line). Each record identifier defines the type of the record and how it is organized.
-
-Each record is a set of contiguous fields, each field having a length (in chars), a type (either 
-representing an ascii or numeric field) and an offset from the beginning of the record.
-
-This library allows to loop through all the records, loop through all fields of a record, using a
-pythonic wat of looping.
-
-The definition of the file structure is provided through an XML definition file.
-
-Record-based files are very popular on mainframes and in some industries. They are plain vanilla ASCII (or EBCDIC files but not the deal here) where each line corresponds to a record, and each record to fields.
-
-So a rbf file is a set of records, and a record is a set of fields. Each record may have a type, usually defined by the first characters on the line. Each record is made of the concatenation of fields, each having its length and its position within a its parent record.
+# A record-based file library
+ In some industries (e.g.: airline, banking), a lot of Ascii files are exchanged using a record-based organization. 
+ Usually, this kind of file is a plain vanilla file where each line is mapped to a record, and each record to a field 
+ within this record. It is based on a positional organization.
+ 
+ Those files are generally coming from a mainframe legacy system, created by some Cobol
+ programs, using copybooks (akin to C structures).
+ 
+ The way to recognize a record is generally by defining a record identifier 
+ (example: first 2 characters of each line). Each record identifier defines the type of 
+ the record and how it is organized.
+ 
+ Each record is a set of contiguous Ascii fields, each field having a length (in chars), a type
+ (either representing an alphanumerical or numeric field) and a length. An offset from the beginning of the record
+ is also part of a field.
+ 
+ This library allows to loop through all the records, and loop through all fields of a record.
+ File data could be Ascii or UTF-8.
+ 
+ The definition of the file structure is provided through an XML definition file.
 
 ## Layout definition file
 
-Such a file could be easily defined by an XML layout file. Suppose you've got an ascii file for some statistical data on continents, countries such as capital, population, etc. Such a file could look like this:
+Such a file could be easily defined by an XML layout file. 
+Suppose you've got an Ascii file for some statistical data on continents, countries such as capital, population, etc. 
+Such a file could look like this:
 
-```
+```text
 CONTAsia           43820000            16920000            29.5     Shanghai            
 COUNChina                         1338100000          Beijing             
 COUNChina Hong Kong SAR           7000000             Hong KongR
@@ -55,9 +56,6 @@ The corresponding XML definition file describing this format could be:
     xsi:schemaLocation="http://www.w3schools.com rbf.xsd"
 >
 
-    <!-- ignoreLine skips lines matching the regex -->
-    <!-- skipField skips this field in each record read -->
-    <!-- mapper maps each line to a record ID -->
     <meta version="1.0" description="Continents, countries, cities" ignoreLine="^#" skipField="ID" mapper="type:1 map:0..4"/>
 
 	<fieldtype name="CHAR" type="string" pattern="\w+" format=""/>
@@ -83,72 +81,7 @@ The corresponding XML definition file describing this format could be:
 </rbfile>
 ```
 
-## Python
-
-This Python library is very simple to use, once you've got the XML definition file defined.
-
-### Installation
-Download the **rbf** directory and set your **PYTHONPATH** environment variable. 
-
-### How to use it
-Add the tradional `import rbf`to your Ruby file and starts playing
-
-```python
-import rbf
-
-# first step: create a Layout object which reads the XML definition file and creates Record and Field objects
-# to play with. A Layout object is a hash of record, with the key being the record name, and the value the
-# Record object
-layout = rbf.Layout("world_data.xml")
-
-# now create a Reader object: it just read every line of the input record-based file and maps it to a Record object from
-# the Layout hash. If the next line is of the same Record type, it will be overwritten.
-# The 3rd argument is a function or a lambda mapping the line to a record type.
-reader = rbf.Reader("world_data.txt", layout, lambda x: x[0:4])
-
-# now, read each record. Next line for example build a CSV file from the rbf input file **world_data.txt**
-for rec in reader:
-    print(";".join(rec.array_of("value")))
-```
-
-## Ruby
-
-This ruby library is very simple to use, once you've got the XML definition file defined.
-
-### Installation
-Download the **lib** directory and set your **RUBYLIB** environment variable. 
-
-### How to use it
-Add the tradional `require "rbf"` to your Ruby file and starts playing
-
-```ruby
-require "rbf"
-
-# first step: create a Layout object which reads the XML definition file and creates Record and Field objects
-# to play with. A Layout object is a hash of record, with the key being the record name, and the value the
-# Record object
-layout = Layout.new("world_data.xml")
-
-# now create a Reader object: it just read every line of the input record-based file and maps it to a Record object from
-# the Layout hash. If the next line is of the same Record type, it will be overwritten.
-# The 3rd argument is a function or a lambda mapping the line to a record type.
-reader = Reader.new("world_data.txt", layout, lambda {|x| x[0..3]})
-
-# now, read each record. Next line for example build a CSV file from the rbf input file **world_data.txt**
-reader.each {|rec|
-  puts rec.array_of(:@value).join(";") 
-}
-```
-
-## Rust
-
-To build both libraries and examples:
-
-```command
-cargo build --release
-```
-
-To use it, use the `rbf` crate.
+## How to use it
 
 This is an example, which just counts record occurence:
 

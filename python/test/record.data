@@ -1,0 +1,94 @@
+RCID ; Record Identification ; 2
+SQNR ; Sequence Number ; 8
+TDNR ; Ticket/Document Number ; 15
+CDGT ; Ticket/Document Number Check Digit ; 1
+TCNR ; Transmission Control Number ; 15
+TCND ; Transmission Control Number Check Digit ; 1
+COUN ; Coupon Number ; 1
+CABI ; Sold Passenger Cabin ; 1
+STPO ; Coupon Stopover Code ; 1
+ORAC ; Coupon Origin Airport/City Code ; 5
+DSTC ; Coupon Destination Airport/City Code ; 5
+OCAR ; Coupon Operating Carrier ; 4
+MCAR ; Coupon Marketing Carrier ; 4
+OFTN ; Coupon Operating Flight Number ; 5
+MFTN ; Coupon Marketing Flight Number ; 5
+RBKD ; Coupon Ticketing Class of Service ; 2
+BCLS ; Coupon Booking Class of Service ; 2
+FTDA ; Coupon Flight Date ; 5
+NBDA ; Coupon Not Valid Before Date ; 5
+NADA ; Coupon Not Valid After Date ; 5
+FTDT ; Coupon Flight Departure Time ; 5
+FTAT ; Coupon Flight Arrival Time ; 5
+FBST ; Coupon Flight Booking Status ; 2
+FBAL ; Coupon Free Baggage Allowance ; 3
+FBTD ; Coupon Fare Basis/Tkt Designator ; 15
+SCFD ; Flight Distance ; 5
+SCEQ ; Equipment Code ; 3
+FILL ; Filler ; 1
+COUN ; Coupon Number ; 1
+CABI ; Sold Passenger Cabin ; 1
+STPO ; Coupon Stopover Code ; 1
+ORAC ; Coupon Origin Airport/City Code ; 5
+DSTC ; Coupon Destination Airport/City Code ; 5
+OCAR ; Coupon Operating Carrier ; 4
+MCAR ; Coupon Marketing Carrier ; 4
+OFTN ; Coupon Operating Flight Number ; 5
+MFTN ; Coupon Marketing Flight Number ; 5
+RBKD ; Coupon Ticketing Class of Service ; 2
+BCLS ; Coupon Booking Class of Service ; 2
+FTDA ; Coupon Flight Date ; 5
+NBDA ; Coupon Not Valid Before Date ; 5
+NADA ; Coupon Not Valid After Date ; 5
+FTDT ; Coupon Flight Departure Time ; 5
+FTAT ; Coupon Flight Arrival Time ; 5
+FBST ; Coupon Flight Booking Status ; 2
+FBAL ; Coupon Free Baggage Allowance ; 3
+FBTD ; Coupon Fare Basis/Tkt Designator ; 15
+SCFD ; Flight Distance ; 5
+SCEQ ; Equipment Code ; 3
+FILL ; Filler ; 1
+COUN ; Coupon Number ; 1
+CABI ; Sold Passenger Cabin ; 1
+STPO ; Coupon Stopover Code ; 1
+ORAC ; Coupon Origin Airport/City Code ; 5
+DSTC ; Coupon Destination Airport/City Code ; 5
+OCAR ; Coupon Operating Carrier ; 4
+MCAR ; Coupon Marketing Carrier ; 4
+OFTN ; Coupon Operating Flight Number ; 5
+MFTN ; Coupon Marketing Flight Number ; 5
+RBKD ; Coupon Ticketing Class of Service ; 2
+BCLS ; Coupon Booking Class of Service ; 2
+FTDA ; Coupon Flight Date ; 5
+NBDA ; Coupon Not Valid Before Date ; 5
+NADA ; Coupon Not Valid After Date ; 5
+FTDT ; Coupon Flight Departure Time ; 5
+FTAT ; Coupon Flight Arrival Time ; 5
+FBST ; Coupon Flight Booking Status ; 2
+FBAL ; Coupon Free Baggage Allowance ; 3
+FBTD ; Coupon Fare Basis/Tkt Designator ; 15
+SCFD ; Flight Distance ; 5
+SCEQ ; Equipment Code ; 3
+FILL ; Filler ; 1
+COUN ; Coupon Number ; 1
+CABI ; Sold Passenger Cabin ; 1
+STPO ; Coupon Stopover Code ; 1
+ORAC ; Coupon Origin Airport/City Code ; 5
+DSTC ; Coupon Destination Airport/City Code ; 5
+OCAR ; Coupon Operating Carrier ; 4
+MCAR ; Coupon Marketing Carrier ; 4
+OFTN ; Coupon Operating Flight Number ; 5
+MFTN ; Coupon Marketing Flight Number ; 5
+RBKD ; Coupon Ticketing Class of Service ; 2
+BCLS ; Coupon Booking Class of Service ; 2
+FTDA ; Coupon Flight Date ; 5
+NBDA ; Coupon Not Valid Before Date ; 5
+NADA ; Coupon Not Valid After Date ; 5
+FTDT ; Coupon Flight Departure Time ; 5
+FTAT ; Coupon Flight Arrival Time ; 5
+FBST ; Coupon Flight Booking Status ; 2
+FBAL ; Coupon Free Baggage Allowance ; 3
+FBTD ; Coupon Fare Basis/Tkt Designator ; 15
+SCFD ; Flight Distance ; 5
+SCEQ ; Equipment Code ; 3
+FILL ; Filler ; 3

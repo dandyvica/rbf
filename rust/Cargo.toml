@@ -1,0 +1,40 @@
+[package]
+name = "rbf"
+version = "0.1.0"
+authors = ["dandyvica <dandyvica@gmail.com>"]
+description = "A library to read record-based files"
+homepage = "https://github.com/dandyvica/rbfrust"
+repository = "https://github.com/dandyvica/rbfrust"
+documentation = "https://github.com/dandyvica/rbfrust"
+keywords = ["flat", "record"]
+categories = ["text-processing"]
+edition = "2018"
+
+[[example]]
+name = "count_recs"
+
+[[example]]
+name = "just_read"
+
+[[example]]
+name = "just_display"
+
+[[bin]]
+name = "layout2html"
+
+[[bin]]
+name = "urr"
+path = "src/bin/urr/urr.rs"
+
+[[bench]]
+name = "read_bench"
+harness = false
+
+[dependencies]
+xml-rs = "0.4.1"
+regex = "0.2.2"
+bencher = "0.1.2"
+chrono = "0.4"
+getopts = "0.2.14"
+pbr = "1.0.0"
+

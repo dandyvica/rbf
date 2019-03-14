@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Record - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="Element.html">Element</a>
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-5B-5D">#[]</a>
+    
+    <li ><a href="#method-i-array_of">#array_of</a>
+    
+    <li ><a href="#method-i-count">#count</a>
+    
+    <li ><a href="#method-i-each">#each</a>
+    
+    <li ><a href="#method-i-include-3F">#include?</a>
+    
+    <li ><a href="#method-i-push">#push</a>
+    
+    <li ><a href="#method-i-value">#value</a>
+    
+    <li ><a href="#method-i-value-3D">#value=</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Record">
+  <h1 id="class-Record" class="class">
+    class Record
+  </h1>
+
+  <section class="description">
+    
+<p>A record is a set of fields found in a record-based file</p>
+
+<h4 id="class-Record-label-Example">Example<span><a href="#class-Record-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-comment"># create new record</span>
+<span class="ruby-identifier">r</span> = <span class="ruby-constant">Record</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;RECORD1&quot;</span>, <span class="ruby-string">&quot;Description of record 1&quot;</span>)
+
+<span class="ruby-comment"># add field objects</span>
+<span class="ruby-identifier">r</span>.<span class="ruby-identifier">push</span>(<span class="ruby-constant">Field</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;FIELD1&quot;</span>, <span class="ruby-string">&quot;Description of field 1&quot;</span>, <span class="ruby-constant">FieldType</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;A&quot;</span>, <span class="ruby-string">&quot;string&quot;</span>), <span class="ruby-value">10</span>))
+<span class="ruby-identifier">r</span>.<span class="ruby-identifier">push</span>(<span class="ruby-constant">Field</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;FIELD2&quot;</span>, <span class="ruby-string">&quot;Description of field 2&quot;</span>, <span class="ruby-constant">FieldType</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;N&quot;</span>, <span class="ruby-string">&quot;integer&quot;</span>), <span class="ruby-value">5</span>))
+<span class="ruby-identifier">r</span>.<span class="ruby-identifier">push</span>(<span class="ruby-constant">Field</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;FIELD2&quot;</span>, <span class="ruby-string">&quot;Description of field 2&quot;</span>, <span class="ruby-constant">FieldType</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;N&quot;</span>, <span class="ruby-string">&quot;integer&quot;</span>), <span class="ruby-value">5</span>))
+<span class="ruby-identifier">r</span>.<span class="ruby-identifier">push</span>(<span class="ruby-constant">Field</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;FIELD3&quot;</span>, <span class="ruby-string">&quot;Description of field 3&quot;</span>, <span class="ruby-constant">FieldType</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;A&quot;</span>, <span class="ruby-string">&quot;string&quot;</span>), <span class="ruby-value">10</span>))
+
+<span class="ruby-comment"># access field by index</span>
+<span class="ruby-identifier">f1</span> = <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>]           <span class="ruby-comment">#=&gt; first field in the record</span>
+
+<span class="ruby-comment"># access by field name</span>
+<span class="ruby-identifier">f2s</span> = <span class="ruby-identifier">r</span>[<span class="ruby-string">&quot;FIELD2&quot;</span>]   <span class="ruby-comment">#=&gt; array of Field objects whose name is &quot;FIELD2&quot;</span>
+<span class="ruby-identifier">f2s</span>.<span class="ruby-identifier">size</span>            <span class="ruby-comment">#=&gt; 3</span>
+
+<span class="ruby-comment"># test if field is in record</span>
+<span class="ruby-identifier">r</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;FIELD1&quot;</span>)   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-identifier">r</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;FOO&quot;</span>)      <span class="ruby-comment">#=&gt; false</span>
+
+<span class="ruby-comment"># get record data</span>
+<span class="ruby-identifier">r</span>.<span class="ruby-identifier">size</span>                 <span class="ruby-comment">#=&gt; 4</span>
+<span class="ruby-identifier">r</span>.<span class="ruby-identifier">length</span>               <span class="ruby-comment">#=&gt; 30</span>
+
+<span class="ruby-comment"># set record value by setting all fields values</span>
+<span class="ruby-identifier">s</span> = <span class="ruby-string">&quot;AAAAAAAAAA0000100002BBBBBBBBBB&quot;</span>
+<span class="ruby-identifier">r</span> = <span class="ruby-identifier">s</span>
+<span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">value</span>             <span class="ruby-comment">#=&gt; &quot;AAAAAAAAAA&quot;</span>
+<span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">value</span>             <span class="ruby-comment">#=&gt; &quot;00001&quot;</span>
+<span class="ruby-identifier">r</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">value</span>             <span class="ruby-comment">#=&gt; &quot;00002&quot;</span>
+<span class="ruby-identifier">r</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">value</span>             <span class="ruby-comment">#=&gt; &quot;BBBBBBBBBB&quot;</span>
+
+<span class="ruby-comment"># and build array of attributes</span>
+<span class="ruby-identifier">r</span>.<span class="ruby-identifier">array_of</span>(:<span class="ruby-ivar">@name</span>)     <span class="ruby-comment">#=&gt; [&quot;FIELD1&quot;,&quot;FIELD2&quot;,&quot;FIELD2&quot;,&quot;FIELD3&quot;]</span>
+<span class="ruby-identifier">r</span>.<span class="ruby-identifier">array_of</span>(:<span class="ruby-ivar">@length</span>)   <span class="ruby-comment">#=&gt; [10, 5, 5, 10]</span>
+
+<span class="ruby-comment"># iterate on all fields</span>
+ <span class="ruby-identifier">r</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">field</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">field</span>.<span class="ruby-identifier">name</span> }
+</pre>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            new(name, description) &rarr; new_Record
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>create a record</p>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="Element.html#method-c-new">Element.new</a>
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/record.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">description</span>)
+    <span class="ruby-comment"># record name should not be empty</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;record name is empty!&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span>
+
+    <span class="ruby-keyword">super</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">description</span>, <span class="ruby-value">0</span>)
+
+    <span class="ruby-comment"># initialize array and hash which will store field objects</span>
+    <span class="ruby-ivar">@flist</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-ivar">@fmap</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            [](key) &rarr; Field or ary of Field objects
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p><a href="Field.html">Field</a>  access with either a string (field name) or
+an integer (field index). If a field name is passed, as fields could have
+the same name, an array of <a href="Field.html">Field</a> objects is
+returned.</p>
+
+<h4 id="method-i-5B-5D-label-Arguments">Arguments<span><a href="#method-i-5B-5D-label-Arguments">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p><code>key</code> - return the field object matching field name (if key is a
+string), or its index in the record</p>
+</li></ul>
+
+<p>if key is an integer</p>
+
+<h3 id="method-i-5B-5D-label-Raise">Raise<span><a href="#method-i-5B-5D-label-Raise">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p><code>ArgumentError</code> if:</p>
+<ul><li>
+<p>key (string) is not found</p>
+</li><li>
+<p>key (integer) is out of bounds</p>
+</li><li>
+<p>key is neither a string nor an integer</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/record.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">key</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@fmap</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">key</span>) 
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;key #{key} is not found in record #{name}!&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@fmap</span>[<span class="ruby-identifier">key</span>]
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Integer</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">key</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">key</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">count</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;key #{key} is out of bounds in record #{name}!&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@flist</span>[<span class="ruby-identifier">key</span>]
+    <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;key #{key} is not a string nor an integer for record #{name}!&quot;</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-array_of" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            array_of(attr) &rarr; ary
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>build an array of attributes data for the argument</p>
+          
+          
+
+          
+          <div class="method-source-code" id="array_of-source">
+            <pre><span class="ruby-comment"># File lib/record.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">array_of</span>(<span class="ruby-identifier">attr</span>)
+    <span class="ruby-ivar">@flist</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">attr</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-count" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            count &rarr; fixnum
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns the number of fields in the record</p>
+          
+          
+
+          
+          <div class="method-source-code" id="count-source">
+            <pre><span class="ruby-comment"># File lib/record.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">count</span>
+    <span class="ruby-ivar">@flist</span>.<span class="ruby-identifier">count</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">(&block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>iterator: iterates through each field</p>
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/record.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-ivar">@flist</span>.<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-include-3F" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            include?(fname) &rarr; bool
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>return true if a field name is found in the record</p>
+
+<h4 id="method-i-include-3F-label-Arguments">Arguments<span><a href="#method-i-include-3F-label-Arguments">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p><code>fname</code> - field name</p>
+          
+          
+
+          
+          <div class="method-source-code" id="include-3F-source">
+            <pre><span class="ruby-comment"># File lib/record.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">include?</span>(<span class="ruby-identifier">fname</span>)
+    <span class="ruby-ivar">@fmap</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">fname</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-push" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            push(Field) &rarr; ary
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Append a field into a record. At the same time, update field lower/upper
+bounds and other field data only relevant when inside a record</p>
+
+<h4 id="method-i-push-label-Arguments">Arguments<span><a href="#method-i-push-label-Arguments">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p><code>field</code> - a <a href="Field.html">Field</a> class object</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="push-source">
+            <pre><span class="ruby-comment"># File lib/record.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">push</span>(<span class="ruby-identifier">field</span>)
+    <span class="ruby-identifier">field</span>.<span class="ruby-identifier">index</span> = <span class="ruby-ivar">@flist</span>.<span class="ruby-identifier">count</span>
+    <span class="ruby-identifier">field</span>.<span class="ruby-identifier">offset</span> = <span class="ruby-ivar">@length</span> 
+
+    <span class="ruby-comment"># save field in a list, and in a hash because field might have the same name. Using the hash,</span>
+    <span class="ruby-comment"># it&#39;s easier to retrieve</span>
+    <span class="ruby-ivar">@flist</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">field</span>)
+    <span class="ruby-ivar">@fmap</span>[<span class="ruby-identifier">field</span>.<span class="ruby-identifier">name</span>].<span class="ruby-identifier">push</span>(<span class="ruby-identifier">field</span>)
+
+    <span class="ruby-comment"># at the same time, build alternate field name</span>
+    <span class="ruby-identifier">field</span>.<span class="ruby-identifier">alternate_name</span> = <span class="ruby-identifier">field</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@fmap</span>[<span class="ruby-identifier">field</span>.<span class="ruby-identifier">name</span>].<span class="ruby-identifier">size</span>.<span class="ruby-identifier">to_s</span>
+
+    <span class="ruby-comment"># as we add a field, record length is growing</span>
+    <span class="ruby-ivar">@length</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">field</span>.<span class="ruby-identifier">length</span>
+
+    <span class="ruby-comment"># and adjust field bounds</span>
+    <span class="ruby-identifier">field</span>.<span class="ruby-identifier">lower_bound</span> = <span class="ruby-identifier">field</span>.<span class="ruby-identifier">offset</span>
+    <span class="ruby-identifier">field</span>.<span class="ruby-identifier">upper_bound</span> = <span class="ruby-identifier">field</span>.<span class="ruby-identifier">offset</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">field</span>.<span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-value" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            value &rarr; str
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>return the record value, which is just the concatenation of all field raw
+values. Returned string length is equal to record length</p>
+          
+          
+
+          
+          <div class="method-source-code" id="value-source">
+            <pre><span class="ruby-comment"># File lib/record.rb, line 175</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">array_of</span>(<span class="ruby-value">:@raw_value</span>).<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-value-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">value=</span><span
+            class="method-args">(s)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>set record value by setting all field values</p>
+          
+          
+
+          
+          <div class="method-source-code" id="value-3D-source">
+            <pre><span class="ruby-comment"># File lib/record.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">value=</span>(<span class="ruby-identifier">s</span>)
+    <span class="ruby-comment"># adjust length to exactly fit record length</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@length</span>
+        <span class="ruby-identifier">s</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">ljust</span>(<span class="ruby-ivar">@length</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@length</span>
+        <span class="ruby-identifier">s</span> = <span class="ruby-identifier">s</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@length</span>]
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># set each field value because we already know field bounds</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">value</span> = <span class="ruby-identifier">s</span>[<span class="ruby-identifier">f</span>.<span class="ruby-identifier">lower_bound</span><span class="ruby-operator">...</span><span class="ruby-identifier">f</span>.<span class="ruby-identifier">upper_bound</span>] }
+
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
